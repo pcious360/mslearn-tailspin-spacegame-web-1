@@ -2,10 +2,10 @@ trigger:
 - '*'
 
 pool:
-  name: 'MyAgentPool'
+  name: 'MyAgentPol'
   demands:
   - npm
-  
+
 variables:
   buildConfiguration: 'Release'
 
