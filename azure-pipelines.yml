@@ -94,8 +94,8 @@ stages:
               startUpCommand: 'func azure functionapp publish $(functionAppName) --no-bundler'
 - task:AzureFunctionApp@
 displayName: 'Azure Function Deploy: leaderboard'
-  inputs:
-    azureSubscription: 'Resource Manager - Tailspin - Space Game'
+inputs:
+   azureSubscription: 'Resource Manager - Tailspin - Space Game'
     appType: functionAppLinux
     appName: '$(LeaderboardAppName)'
     package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/Tailspin.SpaceGame.LeaderboardFunction.zip'
