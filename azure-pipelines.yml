@@ -1,7 +1,7 @@
 stages:
 - stage: 'Build'
   displayName: 'Build the web application'
-  jobs: 
+  jobs:
   - job: 'Build'
     displayName: 'Build job'
     pool:
@@ -59,7 +59,7 @@ stages:
     - publish: '$(Build.ArtifactStagingDirectory)'
       artifact: drop
     - stage: 'Deploy'
-   displayName: 'Deploy the web application'
+    displayName: 'Deploy the web application'
     dependsOn: Build
   jobs:
   - deployment: Deploy
@@ -98,7 +98,7 @@ stages:
     appName: $(WebAppName)
     resourceGroupName: $(ResourceGroupName)
     appSettings: |
-      [
+     [
         {
           "name": "AppSettings__LeaderboardFunctionUrl",
           "value": "http://$(LeaderboardAppName).azurewebsites.net/api/LeaderboardFunction",
