@@ -58,7 +58,6 @@ stages:
 
     - publish: '$(Build.ArtifactStagingDirectory)'
       artifact: drop
-      
 - stage: 'Deploy'
   displayName: 'Deploy the web application'
   dependsOn: Build
@@ -91,11 +90,10 @@ stages:
               appName: '$(LeaderboardAppName)'
               package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/Tailspin.SpaceGame.LeaderboardFunction.zip'
               runtimeStack: DOCKER|microsoft/azure-functions-dotnet:4
-              startUpCommand: 'func azure functionapp publish $(functionAppName) --no-bundler'
-- task:AzureFunctionApp@
-displayName: 'Azure Function Deploy: leaderboard'
-inputs:
-   azureSubscription: 'Resource Manager - Tailspin - Space Game'
+              startUpCommand: 'func azure functionapp publish $(functionAppName) --no-bundler'- task: AzureFunctionApp@1
+  displayName: 'Azure Function Deploy: leaderboard'
+  inputs:
+    azureSubscription: 'Resource Manager - Tailspin - Space Game'
     appType: functionAppLinux
     appName: '$(LeaderboardAppName)'
     package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/Tailspin.SpaceGame.LeaderboardFunction.zip'
