@@ -93,7 +93,7 @@ stages:
               runtimeStack: DOCKER|microsoft/azure-functions-dotnet:4
               startUpCommand: 'func azure functionapp publish $(functionAppName) --no-bundler'
 - task:AzureFunctionApp@
-  displayName: 'Azure Function Deploy: leaderboard'
+displayName: 'Azure Function Deploy: leaderboard'
   inputs:
     azureSubscription: 'Resource Manager - Tailspin - Space Game'
     appType: functionAppLinux
