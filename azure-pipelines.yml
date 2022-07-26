@@ -92,13 +92,12 @@ stages:
               runtimeStack: DOCKER|microsoft/azure-functions-dotnet:4
               startUpCommand: 'func azure functionapp publish $(functionAppName) --no-bundler'
       
-      - task: AzureAppServiceSettings@1
-      displayName: 'Update web app settings'
-       inputs:
-           azureSubscription: 'Resource Manager - Tailspin - Space Game'
-        appName: $(WebAppName)
+  - task: AzureAppServiceSettings@1
+    displayName: 'Update web app settings'
+    inputs:
+           azureSubscription: 'Resource Manager - Tailspin - Space Game'     appName: $(WebAppName)
     resourceGroupName: $(ResourceGroupName)
- appSettings: |
+appSettings: |
       [
         {
           "name": "AppSettings__LeaderboardFunctionUrl",
