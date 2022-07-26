@@ -58,7 +58,7 @@ stages:
 
     - publish: '$(Build.ArtifactStagingDirectory)'
       artifact: drop
-      - task: AzureFunctionApp@1
+      -task: AzureFunctionApp@1
   displayName: 'Azure Function Deploy: leaderboard'
   inputs:
     azureSubscription: 'Resource Manager - Tailspin - Space Game'
