@@ -91,12 +91,12 @@ stages:
               package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/Tailspin.SpaceGame.LeaderboardFunction.zip'
               runtimeStack: DOCKER|microsoft/azure-functions-dotnet:4
               startUpCommand: 'func azure functionapp publish $(functionAppName) --no-bundler'
-	- task: 'AzureAppServiceSettings@1'
-  displayName: 'Update web app settings'
-  inputs:
-    azureSubscription: 'Resource Manager - Tailspin - Space Game'
-    appName: $(WebAppName)
-    resourceGroupName: $(ResourceGroupName)
+		- task: 'AzureAppServiceSettings@1'
+ 			 displayName: 'Update web app settings'
+ 			 inputs:
+   			 azureSubscription: 'Resource Manager - Tailspin - Space Game'
+    		 appName: $(WebAppName)
+    		resourceGroupName: $(ResourceGroupName)
     appSettings: |
       [
         {
